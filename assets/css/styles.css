@@ -1,0 +1,483 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* outline: solid 2px black; */
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fonts */
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+/* Root */
+
+:root {
+    /* Colors */
+    --color-primary: #4845D2;
+    --color-secondary: #ff5a5f;
+    --color-text: #333;
+    --color-text-light: #f4f4f4;
+    /* Fonts */
+    --font-primary: "Lato", sans-serif;
+    --font-secondary: "Roboto", sans-serif;
+    /* Spaces */
+    --space-xxs: 5px;
+    --space-xs: 10px;
+    --space-sm: 15px;
+    --space-md: 20px;
+    --space-lg: 30px;
+    --space-xl: 40px;
+    /* Box Shadows */
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Border-radius */
+    --border-radius-sm: 8px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 12px;
+}
+
+/* Globals */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout */
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* Utilities */
+
+.color-primary {
+    color: var(--color-primary);
+}
+
+/* Write your CSS code here */
+
+/* Section header */
+
+/*Background de todo el header */
+header.header {
+    background: linear-gradient(rgba(0, 0, 0, 0.336), rgba(0, 0, 0, 0.356)), url(/assets/img/hero-banner.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+/* Menu de navegacion alineado horizontal */
+
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Lista de menu alineada horizontal y vertical*/
+ul.navbar__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/*Color de links blancos */
+ul.navbar__list li.navbar__list__item>a {
+    color: var(--color-text-light);
+}
+
+.navbar__picture {
+    display: flex;
+    align-items: center;
+}
+
+/*Alinear logo y letra horizontal y centrado*/
+figure.navbar__login {
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius-md);
+}
+
+figure.navbar__login>img {
+    width: 30px;
+}
+
+
+/* Alinea texto de header en la mitad con letras centradas */
+header.header div.header-texts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-text-light);
+    width: 60%;
+    text-align: center;
+}
+
+/*Cambia el color de palabras clave en el texto del header*/
+header.header div.header-texts h1>span {
+    color: var(--color-primary);
+}
+
+/* Estilos del boton header ->Explore logo ipsum now*/
+header.header .header-texts>button {
+    background-color: transparent;
+    color: var(--color-text-light);
+    margin-top: var(--space-md);
+    width: 220px;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    border-radius: var(--border-radius-sm);
+
+}
+
+header.header .header-texts>p {
+    margin-top: var(--space-sm);
+}
+
+/*Section 2 -> cartas pegadas al header*/
+/*Tamaño de mi seccion y postion absolute para que ocupe un espacio del header en la parte inferior*/
+section.section2 {
+    position: absolute;
+    bottom: -37%;
+    min-height: 40vh;
+    width: 100%;
+}
+
+/*Alinear cartas horizontal y separacion entre ellas*/
+section div.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+/*coloca mis cartas del mismo tamaño en un ancho del 100% del contenedor*/
+section div.card-container article.card__formated {
+    border-radius: var(--border-radius-md);
+    flex-basis: calc((100% - 40px) /3);
+    flex-grow: 1;
+
+}
+
+/*Background de imagenes de las tres cartas se ajustan con cover*/
+section div.card-container article.img1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.527)), url(/assets/img/service-1.jpg);
+    background-size: cover;
+
+}
+
+section div.card-container article.img2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.527)), url(/assets/img/service-2.jpg);
+    background-size: cover;
+}
+
+section div.card-container article.img3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.527)), url(/assets/img/service-3.jpg);
+    background-size: cover;
+}
+
+/* Alinea texto de la targeta en la mitad y le cambia color */
+section.section2 div.card-container article.card__formated>h2 {
+    text-align: center;
+    line-height: 300px;
+    color: var(--color-text-light);
+    border-radius: var(--border-radius-sm);
+}
+
+/* SEection 3 -> Acerca de nosotros*/
+/* tiene margin-top 350 para separar la seccion de arriba*/
+section.section3 {
+    margin-top: 350px;
+    min-height: 60vh;
+    width: 100%;
+}
+
+/*Alinea los elementos horizontal y de todo el ancho*/
+section.section3 div.about-us-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Divide los elementos para que ocpuen de 50% de la pantalla*/
+section.section3 div.about-us-container article.about-us__content {
+    max-height: 700px;
+    flex-basis: calc(100% / 2);
+    flex-grow: 1;
+}
+
+/* Formato a la imagen para que ocupe solo el espacio de su padre*/
+section.section3 div.about-us-container article.about-us__content>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0% 62%;
+}
+
+/*da al contenedor color */
+section.section3 div.about-us-container article.color__purple {
+    background-color: rgba(233, 193, 223, 0.418);
+}
+
+/* da al texto color y el titulo le pone la letra mas delgada*/
+div.about-us__text>h2 {
+    color: var(--color-primary);
+    font-weight: 100;
+    margin-left: var(--space-md);
+    margin-top: var(--space-md);
+    padding: 0px 0px 0px 10px;
+}
+
+div.about-us__text>p {
+    margin-left: var(--space-md);
+    padding: 10px;
+    margin-top: 150px;
+}
+
+div.about-us__text>ul {
+    margin-top: var(--space-xl);
+    margin-left: var(--space-md);
+    padding: 0px 0px 0px 30px;
+    list-style: circle;
+}
+
+div.about-us__text button.about-us__btn__formated {
+    margin-left: var(--space-xl);
+    text-align: left;
+    width: 300px;
+    margin-top: 150px;
+    padding: 15px 0px;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    font-weight: bold;
+    font-size: medium;
+    border-radius: var(--border-radius-md);
+}
+
+/*Section 4 -> galeria */
+section.section4 {
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ESpacio de titulo hacia la izquierda para alinear con galeria*/
+section.section4>h2 {
+    margin-left: 90px;
+    margin-bottom: var(--space-xl);
+    margin-top: var(--space-xl);
+
+}
+
+/* Galeria con grid 4x4 */
+section.section4 div.gallery-container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-rows: 400px 400px 400px;
+    gap: 18px;
+}
+
+/*Tamaño de las imagenes de la galeria*/
+section.section4 div.gallery-container>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+}
+
+/* Distribucion de la galeria en la grid*/
+div.gallery-container .img1 {
+    grid-row: span 3;
+}
+
+div.gallery-container .img2 {
+    grid-row: span 2;
+}
+
+div.gallery-container .img3 {
+    grid-column: span 2;
+}
+
+div.gallery-container .img4 {
+    grid-column: span 2;
+}
+
+div.gallery-container .img6 {
+    grid-row: span 2;
+}
+
+/*Section 5-> Contest*/
+section.section5 {
+    margin-top: var(--space-xl);
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(231, 228, 228, 0.493)
+}
+
+section.section5>h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+/* alinea las cartas de manera horizontal*/
+section.section5 div.contest-container {
+    padding: 0px 0px 0px 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* le da formato a las imagenes para ocupar todo el ancho de la card*/
+section.section5 div.contest-container article.contest__card>img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+}
+
+/* Le da un tamaño igual a cada carta, se le da borde y color de fondo a la carta*/
+section.section5 div.contest-container article.contest__card {
+    background-color: white;
+    flex-basis: calc((100% - 45px) / 4);
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-md);
+}
+
+/*da espacio al titulo de la carta*/
+section.section5 div.contest-container article.contest__card>h3 {
+    margin-top: var(--space-xl);
+    margin-left: var(--space-sm);
+}
+
+section.section5 div.contest-container article.contest__card div.contest__text {
+    margin-left: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+/*estilos boton targetas*/
+section.section5 div.contest-container article.contest__card>button {
+    margin-top: var(--space-md);
+    margin-left: var(--space-md);
+    margin-right: var(--space-md);
+    padding: 10px 10px;
+    text-align: center;
+    width: 400px;
+    background-color: transparent;
+    color: var(--color-primary);
+    border-radius: var(--border-radius-sm);
+    border: 0.5px solid var(--color-primary);
+}
+
+/* section.section5 div.contest-container article.card__maxheight {
+    background-color: white;
+    height: 320px;
+}
+
+section.section5 div.contest-container article.card__maxheight2 {
+    margin-top: 60px;
+} */
+
+article.contest__card h2.contest__title__card {
+    font-size: 20px;
+}
+
+/*seccion footer*/
+footer.footer {
+    margin-top: 80px;
+    background-color: #4745d2a1;
+}
+
+footer.footer div.footer-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+}
+
+footer.footer div.footer-container article.footer__content figure.footer__logo {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+footer.footer div.footer-container article.footer__content {
+    flex-basis: calc((100% - 400px) /3);
+}
+
+footer.footer div.footer-container article.footer__content>p {
+    color: var(--color-text-light);
+}
+
+.footer__content>h3,
+.footer__title>h3 {
+    color: var(--color-text-light);
+}
+
+.list__item>a {
+    color: var(--color-text-light);
+}
+
+footer.footer p.footer__Rights__Reserved {
+    text-align: center;
+    color: var(--color-text-light);
+    padding: 20px;
+}
